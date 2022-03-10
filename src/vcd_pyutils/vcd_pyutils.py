@@ -86,7 +86,7 @@ class vcd():
     def __init__(self,*args, file_name = None):
 
         if file_name is not None:
-            mapping, self._signals =  parse_vcd("xsim_dump.vcd")
+            mapping, self._signals =  parse_vcd(file_name)
 
         else:
             mapping, self._signals = args[0], args[1]

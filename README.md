@@ -26,7 +26,7 @@ inside a python shell
     from vcd_pyutils import vcd_pyutils          
 
     #instantiate parser                  
-    name_2_vcdId, signals = vcd_pyutils.parse_vcd("tests/xsim_dump.vcd")
+    simulation_results = vcd_pyutils.vcd(file_name = "tests/vcd_file_name.vcd")
 
     #inspect the results
     print(simulation_results.keys())
