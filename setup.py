@@ -11,7 +11,7 @@ setuptools.setup(
     version="0.0.1",
     author="Sioan Zohar",
     author_email="zohar.sioan@gmail.com",
-    description="utilities for common daq applications",
+    description="utilities for generic vcd applications",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/sioan/vcd_pyutils",

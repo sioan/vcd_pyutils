@@ -10,7 +10,7 @@ Python version 3.8.10
 
 setup the environment in the bash terminal
 
-    git clone 
+    git clone git@github.com:sioan/vcd_pyutils.git
 
     cd vcd_pyutils
 
@@ -23,9 +23,10 @@ setup the environment in the bash terminal
 
 inside a python shell
 
-    from vcd_pyutils import vcd_pyutils                            
+    from vcd_pyutils import vcd_pyutils          
 
-    simulation_results = vcd_pyutils.vcd("vcd_file_name.vcd")
+    #instantiate parser                  
+    name_2_vcdId, signals = vcd_pyutils.parse_vcd("tests/xsim_dump.vcd")
 
     #inspect the results
     print(simulation_results.keys())
