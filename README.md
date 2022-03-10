@@ -35,5 +35,15 @@ inside a python shell
     #retrieving the signal using the vivado heirarchy
     tdata = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['data']
 
+    #converting data to 8 bit integers ( need hdl source code to know how many bits used for datatype)
+    width = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['width']
+    int_size = 8 #number of bits in integer
+
+    integer_bus = vcd_pyutils.bus_trace_to_int_array(tdata,width,int_size)
+
+    #time of a specific index in the integer bus
+    time  = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['time']
+
+
 ## TODO:
 implement 
