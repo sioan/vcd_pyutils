@@ -26,24 +26,25 @@ inside a python shell
     from vcd_pyutils import vcd_pyutils          
 
     #instantiate parser                  
-    simulation_results = vcd_pyutils.vcd(file_name = "tests/vcd_file_name.vcd")
+    simulation_results = vcd_pyutils.vcd(file_name = "tests/xsim_dump.vcd")
 
-    #inspect the results
+
+inspect the results
+
     print(simulation_results.keys())
     print(simulation_results['exdes_tb'])
 
-    #retrieving the signal using the vivado heirarchy
+retrieve the signal using the vivado heirarchy
+
     tdata = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['data']
 
-    #converting data to 8 bit integers ( need hdl source code to know how many bits used for datatype)
+convert data to 8 bit integers ( need hdl source to know how many bits used for datatype)
+
     width = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['width']
     int_size = 8 #number of bits in integer
 
     integer_bus = vcd_pyutils.bus_trace_to_int_array(tdata,width,int_size)
 
-    #time of a specific index in the integer bus
+get the time of a specific index in the integer bus
+
     time  = simulation_results['exdes_tb']['exdes_top']['m_axis_tdata']['time']
-
-
-## TODO:
-implement 
